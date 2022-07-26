@@ -33,8 +33,8 @@ public class C06_Dropdown01 {
     // test01
     // https://www.amazon.com/ adresine gidin.
     //	Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45 oldugunu test edin
-    // //-Test 2
-    //        //	1. Kategori menusunden Books secenegini  secin
+    // Test 2
+    // 1. Kategori menusunden Books secenegini  secin
     //	2. Arama kutusuna Java yazin ve aratin
     //	3. Bulunan sonuc sayisini yazdirin
     //	4. Sonucun Java kelimesini icerdigini test edin
@@ -55,9 +55,11 @@ public class C06_Dropdown01 {
         List<WebElement> optionListesi=select.getOptions();
 
         int actualOptionSayisi=optionListesi.size();
-        int expectedOptionSayisi=45;
+        int expectedOptionSayisi=30;
 
-        Assert.assertEquals(actualOptionSayisi,expectedOptionSayisi);
+    System.out.println("actualOptionSayisi = " + actualOptionSayisi);
+
+    Assert.assertEquals(actualOptionSayisi,expectedOptionSayisi);
 
     }
 
@@ -78,6 +80,7 @@ public class C06_Dropdown01 {
         //	4. Sonucun Java kelimesini icerdigini test edin
 
         String actualSonucSayisiYazisi=sonucSayisiElementi.getText();
+        System.out.println("actualSonucSayisiYazisi = " + actualSonucSayisiYazisi);
         String arananKelime="Java";
 
         Assert.assertTrue(actualSonucSayisiYazisi.contains(arananKelime),"Arama sonucu Java icermiyor");
@@ -86,7 +89,7 @@ public class C06_Dropdown01 {
 
     @AfterClass
     public  void  teardown(){
-        driver.close();
+        //driver.close();
     }
 
 }

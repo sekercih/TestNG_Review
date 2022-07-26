@@ -25,6 +25,8 @@ public class C04_DropDown01 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
+    //* Amazona gidilsin,3.elemnti seçip,yazdıralım ve adımları yazalım..
+
     @Test
     public void dropdownTesti() throws InterruptedException {
         // Dropdown'da var olan seceneklerden birini secmek icin
