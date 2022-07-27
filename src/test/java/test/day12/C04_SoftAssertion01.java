@@ -12,8 +12,8 @@ public class C04_SoftAssertion01 {
         int b=20;
         int c=30;
 
-        SoftAssert softAssert=new SoftAssert();
-//!
+        SoftAssert softAssert=new SoftAssert(); //aşağıdakiler hard assert olsaydı ilkinde htatda dururdu.
+//! mesajları yazmadan soft assertleri yazalım.
         softAssert.assertEquals(a,b,"1.test basarisiz"); // failed
         softAssert.assertTrue(a>b,"2.test basarisiz"); // failed
         softAssert.assertTrue(a<c,"3.test basarisiz"); // passed

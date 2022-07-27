@@ -23,7 +23,7 @@ public class C02_DependsOnMethods01 {
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
     //todo
     //	2. Test : 1.Test basarili ise search Box’i kullanarak “Nutella” icin
@@ -44,7 +44,7 @@ public class C02_DependsOnMethods01 {
     public void aramaTesti(){
         //	2. Test : 1.Test basarili ise search Box’i kullanarak “Nutella” icin
         //	arama yapin ve aramanizin gerceklestigini Test edin
-        WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));
+        WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbo"));
         aramaKutusu.sendKeys("Nutella"+ Keys.ENTER);
         String actualTitle=driver.getTitle();
         String arananKelime="Nutella";

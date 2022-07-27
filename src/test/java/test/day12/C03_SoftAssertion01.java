@@ -15,6 +15,7 @@ import java.time.Duration;
 import java.util.List;
 
 public class C03_SoftAssertion01 {
+    //todo
     // Yeni bir Class Olusturun : C03_SoftAssert
     // 1. “http://zero.webappsecurity.com/” Adresine gidin
     // 2. Sign in butonuna basin
@@ -25,7 +26,7 @@ public class C03_SoftAssertion01 {
     // 7. “Purchase Foreign Currency” tusuna basin
     // 8. “Currency” drop down menusunden Eurozone’u secin
     // 9. soft assert kullanarak "Eurozone (Euro)" secildigini test edin
-    // 10. soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"
+    // //! 10. soft assert kullanarak DropDown listesinde "Switzerland (franc)" oldugunu test edin .
     WebDriver driver;
 
     @BeforeMethod
@@ -87,11 +88,11 @@ public class C03_SoftAssertion01 {
         String yeniPara= "";
         for (WebElement each:optionList) {
             yeniPara+=each.getText()+",";
-            System.out.println("Yeni Para Birimleri= " +yeniPara);
+
 
            }
         softAssert.assertTrue(yeniPara.contains(para),"Para bulunamadı");
-
+        System.out.println("Yeni Para Birimleri= " +yeniPara.substring(0,yeniPara.length()-1));
         softAssert.assertAll();
 
         System.out.println("\n"+"testlerden failed olan varsa softAssert.assertAll'dan sonrasi calismaz");
@@ -99,6 +100,6 @@ public class C03_SoftAssertion01 {
 
     @AfterMethod
     public void teardown(){
-        driver.close();
+        //driver.close();
     }
 }
