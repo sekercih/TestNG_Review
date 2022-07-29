@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -17,11 +18,13 @@ public class C02_Alerts {
     //todo
     // ● https://the-internet.herokuapp.com/javascript_alerts adresine gidin.
     // ● Bir metod olusturun: acceptAlert
-    //        ○ 1. butona tıklayın, uyarıdaki OK butonuna tıklayın ve result mesajının       “You successfully clicked an alert” oldugunu test edin.
+    //        ○ 1. butona tıklayın, uyarıdaki OK butonuna tıklayın ve result mesajının
+    //        “You successfully clicked an alert” oldugunu test edin.
     // ● Bir metod olusturun: dismissAlert
     //        ○ 2. butona tıklayın, uyarıdaki Cancel butonuna tıklayın ve result mesajının       “successfuly” icermedigini test edin.
     // ● Bir metod olusturun: sendKeysAlert
-    //        ○ 3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna     tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
+    //        ○ 3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna
+    //        tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
     WebDriver driver;
     SoftAssert softAssert;
 
@@ -34,60 +37,54 @@ public class C02_Alerts {
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         softAssert = new SoftAssert();
 
-
     }
 
     @Test
-    public void acceptAlert() throws InterruptedException {
-        //* ● Bir metod olusturun: acceptAlert
-        //* 1. butona tıklayın, uyarıdaki OK butonuna tıklayın ve result mesajının
-        driver.findElement(By.xpath("//button[@onclick=\"jsAlert()\"]")).click();
-        Thread.sleep(3000);
+    public void acceptAlert() {
+        //*        ○ 1. butona tıklayın, uyarıdaki OK butonuna tıklayın ve result mesajının
+        // *       “You successfully clicked an alert” oldugunu test edin.
+
+        driver.findElement(By.xpath("//*[@onclick=\"jsAlert()\"]")).click();
         driver.switchTo().alert().accept();
-
-        //* “You successfully clicked an alert” oldugunu test edin.
-        String successfully = driver.findElement(By.xpath("//*[@id=\"result\"]")).getText();
-        String expectedsucces = "You successfully clicked an alert";
-        softAssert.assertEquals(successfully, expectedsucces, "Cliced an alert yok.");
+        String acceptAlert = driver.findElement(By.xpath("//p[@id=\"result\"]")).getText();
+        String expectedcceptAlert = "You successfully clicked an alert";
+        softAssert.assertTrue(acceptAlert.contains(expectedcceptAlert),"You successfully clicked an alert” içermiyor." );
 
 
     }
 
     @Test
-    public void dismissAlert() throws InterruptedException {
-        //* Bir metod olusturun: dismissAlert
-        //*2. butona tıklayın, uyarıdaki Cancel butonuna tıklayın ve result mesajının
+    public void dismissAlert() {
+        //  *      ○ 2. butona tıklayın, uyarıdaki Cancel butonuna tıklayın ve result mesajının
+        // *       “successfuly” icermedigini test edin.
+
         driver.findElement(By.xpath("//*[@onclick=\"jsConfirm()\"]")).click();
-        Thread.sleep(3000);
         driver.switchTo().alert().dismiss();
-        //* “successfuly” icermedigini test edin.
-        String successfully = driver.findElement(By.xpath("//*[@id=\"result\"]")).getText();
-        String expectedSucces = "successfuly";
-        softAssert.assertFalse(successfully.contains(expectedSucces), "successfuly içeriyor");
+        String dismissAlert = driver.findElement(By.xpath("//p[@id=\"result\"]")).getText();
+        String expecteddismis = "successfuly";
+      softAssert.assertFalse(dismissAlert.contains(expecteddismis),"successfuly içeriyor.");
 
 
     }
 
     @Test
-    public void sendKeysAlert() throws InterruptedException {
-
-        // * ○ 3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna
+    public void sendKeysAlert() {
+        // *       ○ 3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna
+        //*        tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
         driver.findElement(By.xpath("//*[@onclick=\"jsPrompt()\"]")).click();
-        Thread.sleep(3000);
-        driver.switchTo().alert().sendKeys("Merhaba Gencler");
+        driver.switchTo().alert().sendKeys("Hasan Özyer");
         driver.switchTo().alert().accept();
-        // *tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
-        String actualResult = driver.findElement(By.xpath("//*[@id=\"result\"]")).getText();
-        String expectedResult = "You entered: Merhaba Gencler";
-        softAssert.assertEquals(actualResult, expectedResult, "You entered: Merhaba Gencler: yazısı çıkmadı");
+        String sendKeysAlert = driver.findElement(By.xpath("//p[@id=\"result\"]")).getText();
+        String expecdetSend = "You entered: Hasan Özyer";
 
+       softAssert.assertEquals(sendKeysAlert,expecdetSend,"İsim aynı değil.");
+
+    }
+@AfterMethod
+    public void tearDown(){
         softAssert.assertAll();
-    }
-
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+        driver.close();
 }
 
+}
 
