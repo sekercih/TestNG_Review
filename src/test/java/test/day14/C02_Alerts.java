@@ -37,6 +37,7 @@ public class C02_Alerts {
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         softAssert = new SoftAssert();
 
+
     }
 
     @Test

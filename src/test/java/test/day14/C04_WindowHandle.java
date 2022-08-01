@@ -25,19 +25,19 @@ public class C04_WindowHandle {
     @Test
     public void windowHandle(){
         driver.get("https://www.amazon.com");
-        System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());}
+        System.out.println("driver.getWindowHandle1() = " + driver.getWindowHandle());}
     @Test
     public void windowHandle2(){
 
         driver.get("https://the-internet.herokuapp.com");
-        System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());
+        System.out.println("driver.getWindowHandle2() = " + driver.getWindowHandle());
 
     }
     @Test
     public void windowHandle3(){
 
         driver.get("https://www.bestbuy.com");
-        System.out.println("driver.getWindowHandle() = " + driver.getWindowHandle());
+        System.out.println("driver.getWindowHandle3() = " + driver.getWindowHandle());
     }
     @AfterMethod
     public void tearDown(){
