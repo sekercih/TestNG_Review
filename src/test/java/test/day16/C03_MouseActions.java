@@ -6,7 +6,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBase;
-
 public class C03_MouseActions extends TestBase {
     //todo
     // https://demoqa.com/droppable adresine gidelim

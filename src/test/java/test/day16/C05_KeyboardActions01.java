@@ -7,7 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBase;
-
 public class C05_KeyboardActions01 extends TestBase {
     @Test
     public void test() throws InterruptedException {

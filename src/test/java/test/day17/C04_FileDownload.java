@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBase;
-
-import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 

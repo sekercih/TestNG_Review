@@ -1,5 +1,5 @@
 package test.day15;
-
+import utilities.TestBase;
 public class Review {
     //todo
     // * Allerts :basit alert sadece ok basmaya izin verir

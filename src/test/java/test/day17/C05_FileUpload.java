@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBase;
-
 public class C05_FileUpload extends TestBase {
     //todo
     // https://the-internet.herokuapp.com/upload adresine gidelim

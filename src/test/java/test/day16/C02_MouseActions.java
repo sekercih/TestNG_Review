@@ -5,11 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.TestBase;
 
-import javax.swing.*;
 import java.util.Set;
-
+import utilities.TestBase;
 public class C02_MouseActions extends TestBase {
     //todo
     // https://the-internet.herokuapp.com/context_menu sitesine gidelim

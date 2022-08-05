@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import utilities.TestBase;
-
 public class C02_Actions extends TestBase {
     //todo
     // Yeni Class olusturun ActionsClassHomeWork
