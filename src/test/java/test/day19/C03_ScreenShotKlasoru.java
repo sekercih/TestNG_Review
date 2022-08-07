@@ -36,6 +36,13 @@ WebElement aramakutusu;
         aramakutusu.clear();
         aramakutusu.sendKeys("Elma"+ Keys.ENTER);
         screenShot();
+    } @Test
+    public void movitaTest() throws IOException, InterruptedException {
+        driver.get("https://movita.com.tr/");
+        System.out.println("driver.getTitle() = " + driver.getTitle());
+        System.out.println("driver.getPageSource() = " + driver.getPageSource());
+        Thread.sleep(5000);
+        screenShot();
     }
 }
 
