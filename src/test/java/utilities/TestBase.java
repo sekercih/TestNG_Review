@@ -40,6 +40,7 @@ public class TestBase {
 public void screenShot() throws IOException {
      TakesScreenshot screen = (TakesScreenshot) driver;
     String day=new SimpleDateFormat("yyMMddhhmmss").format(new Date());
+
     File tumSayfa=new File("TScreenshot/tumsayfa"+day+".png");
     File geciciSayfa=screen.getScreenshotAs(OutputType.FILE);
     FileUtils.copyFile(geciciSayfa,tumSayfa);
