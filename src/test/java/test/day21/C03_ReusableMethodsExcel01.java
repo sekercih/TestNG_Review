@@ -3,6 +3,8 @@ import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -30,7 +32,7 @@ public class C03_ReusableMethodsExcel01 {
 
     public static Map<String,String> mapOlustur(String path, String sayfaAdi) {
 
-        Map<String,String> excelMap = new TreeMap<>();
+        Map<String,String> excelMap = new HashMap<>();
         Workbook workbook=null;
         // ilk adim excel'de istenen sayfaya ulasmak
         try {

@@ -43,6 +43,5 @@ public class C02_BasicAuthentication {
         Assert.assertTrue(basarili.isDisplayed());
 
 
-
     }
 }

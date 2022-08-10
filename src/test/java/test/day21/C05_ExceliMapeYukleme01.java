@@ -3,19 +3,19 @@ package test.day21;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Map;
+import java.util.*;
 
 public class C05_ExceliMapeYukleme01 {
 
     @Test
-    public void test01(){
+    public void test01() {
         // dosya yolu ve sayfa ismi verilen bie excel sheet'i map olarak kaydeden
         // reusable bir method olusturalim
 
-        String path="src/test/java/resources/ulkeler.xlsx";
-        String sayfaAdi="Sayfa1";
+        String path = "src/test/java/resources/ulkeler.xlsx";
+        String sayfaAdi = "Sayfa1";
 
-        Map<String,String> ulkelerMap= C03_ReusableMethodsExcel01.mapOlustur(path,sayfaAdi);
+        Map<String, String> ulkelerMap = C03_ReusableMethodsExcel01.mapOlustur(path, sayfaAdi);
 
 
         // olusturdugumuz map'i kullanarak Turkey'in bilgilerini yazdirin
@@ -25,4 +25,10 @@ public class C05_ExceliMapeYukleme01 {
         // Listede Netherlands oldugunu testedin
 
         Assert.assertTrue(ulkelerMap.containsKey("Netherlands"));
-}}
+
+        //*  Value leri key göre yazdıralım..
+        ulkelerMap.entrySet().stream().sorted(Map.Entry.comparingByValue())
+                .forEach(System.out::println);
+
+    }
+}
