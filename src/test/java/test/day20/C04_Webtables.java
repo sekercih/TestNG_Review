@@ -2,7 +2,7 @@ package test.day20;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openxmlformats.schemas.drawingml.x2006.main.ThemeDocument;
+
 import org.testng.annotations.Test;
 import utilities.TestBase;
 

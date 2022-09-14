@@ -1,4 +1,4 @@
-package test.day14;
+package test.day14;/*
 import io.github.sukgu.*;
 import dev.failsafe.internal.util.Durations;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -38,3 +38,4 @@ public class Psikolink {
 
     }
 
+*/

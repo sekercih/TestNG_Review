@@ -51,7 +51,7 @@ public class C01_WindowHandle {
         System.out.println("amazonHandle = " + amazonHandle);
 //* Yeni bir pencere aç
 //* bestbuy.com git
-        driver.switchTo().newWindow(WindowType.WINDOW); //yeni pencere açılır.
+      //  driver.switchTo().newWindow(WindowType.WINDOW); //yeni pencere açılır.
         driver.get("https://www.bestbuy.com");
 //* yeni açılan pencerenin handel değerini al
         String bestHandle = driver.getWindowHandle();
@@ -61,7 +61,7 @@ public class C01_WindowHandle {
         System.out.println("handelslar.toString() = " + handelslar.toString());
 
  //*      şimdi yeni bir tab aç
-        driver.switchTo().newWindow(WindowType.TAB); //yeni bir tab açar..
+      //  driver.switchTo().newWindow(WindowType.TAB); //yeni bir tab açar..
 // *   facebook.com a git
         driver.get("https://www.facebook.com");
 // *   amazon.com a geri dön

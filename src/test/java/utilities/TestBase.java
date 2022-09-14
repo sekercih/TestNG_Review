@@ -35,7 +35,7 @@ public class TestBase {
     @AfterClass
     public void tearDown() throws InterruptedException {
 
-        driver.quit();
+       // driver.quit();
     }
 public void screenShot() throws IOException {
      TakesScreenshot screen = (TakesScreenshot) driver;
