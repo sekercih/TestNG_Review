@@ -17,6 +17,7 @@ public class C01_JsExecuterClick extends TestBase {
         driver.get("https://www.amazon.com");
 
         //* 1 adım obje oluşturmak
+
         JavascriptExecutor jse= (JavascriptExecutor) driver;
 
         //* 2adım locate almak
